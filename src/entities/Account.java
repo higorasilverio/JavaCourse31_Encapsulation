@@ -43,7 +43,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account " + number + ", Holder: " + holder + ", Balance: $ " + balance;
+		return "Account " + number + ", Holder: " + holder + ", Balance: $ " + String.format("%.2f", balance);
 	}
 	
 }

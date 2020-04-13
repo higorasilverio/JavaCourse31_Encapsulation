@@ -20,36 +20,32 @@ public class Program {
 		scanner.nextLine();
 		String holder = scanner.nextLine();
 		System.out.print("Enter initial deposit (y/n)? ");
-		char initialDeposit = scanner.nextLine().charAt(0);
+		char initialDeposit = scanner.next().charAt(0);
 		if (initialDeposit == 'y') {
 			System.out.print("Enter initial deposit: ");
 			double amount = scanner.nextDouble();
-			System.out.println();
-			
 			acc = new Account(number, holder, amount);
-			System.out.println("Account data:");
-			System.out.println(acc.toString());
 		}
 		else {
-			System.out.println();
-			
 			acc = new Account(number, holder);
-			System.out.println("Account data:");
-			System.out.println(acc.toString());
 		}
+		System.out.println();
+		System.out.println("Account data:");
+		System.out.println(acc);
 		System.out.println();
 		
 		System.out.print("Enter a deposit value: ");
-		acc.deposit(scanner.nextDouble());
+		double depositValue = scanner.nextDouble();
+		acc.deposit(depositValue);
 		System.out.println("Updated account data: ");
-		System.out.println(acc.toString());
+		System.out.println(acc);
 		System.out.println();
 		
 		System.out.print("Enter a withdraw value: ");
-		acc.withdraw(scanner.nextDouble());
+		double withdrawValue = scanner.nextDouble();
+		acc.withdraw(withdrawValue);
 		System.out.println("Updated account data: ");
-		System.out.println(acc.toString());
-		System.out.println();
+		System.out.println(acc);
 		
 		scanner.close();
 	}
